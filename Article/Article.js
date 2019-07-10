@@ -2,7 +2,7 @@
 /* Look over this data, then proceed to line 91*/
 const data = [
   {
-    title: 'Lambda School Students: "We\'re the best!"',
+    title: 'Lambda School Students: "We are the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
@@ -144,4 +144,24 @@ articleDate.classList.add('date');
 button.classList.add('expandButton');
 
 
+/* Set text content */
+
+articleTitle.textContent = title;
+articleDate.textContent = date;
+paragraph1.textContent = firstParagraph;
+paragraph2.textContent = secondParagraph;
+paragraph3.textContent = thirdParagraph;
+
+/* Adding event listener to button */
+
+button.addEventListener('click', event => 
+{
+button.classList.toggle('article-open')
+article.classList.toggle('toggle-on')
+
+
+})
+
+return article;
 }
+
