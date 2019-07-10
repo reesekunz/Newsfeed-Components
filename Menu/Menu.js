@@ -15,7 +15,7 @@ let menuItems = [
 
   <div class="menu">
     <ul>
-      {each menu item as a list item}
+      {each menu item as a list item}=
     </ul>
   </div>
 

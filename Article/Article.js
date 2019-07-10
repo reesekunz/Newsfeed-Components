@@ -101,6 +101,7 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
+
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
@@ -112,3 +113,35 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+
+/* Create function */
+function createArticle (title, date, content)
+{
+/* Create new elements to match up with HTML template given above */
+
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate = document.createElement('p');
+const paragraph1 = document.createElement('p');
+const paragraph2 = document.createElement('p');
+const paragraph3 = document.createElement('p');
+const button = document.createElement('span');
+
+/* Set up structure of elements based off HTML template parent/child element positioning */
+
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(paragraph1);
+article.appendChild(paragraph2);
+article.appendChild(paragraph3);
+article.appendChild(button);
+
+/* Set class names in reference to HTML template  */
+
+article.classList.add('article');
+articleDate.classList.add('date');
+button.classList.add('expandButton');
+
+
+}
