@@ -110,10 +110,20 @@ const data = [
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article 
 
 */
 
+/* STEP 4 */
+
+const articles = document.querySelector('.articles');
+
+
+data.forEach(dataset => {
+  articles.appendChild(createArticle(dataset.title, dataset.date, dataset.content))
+})
+
+/* STEP 1 */
 
 /* Create function */
 function createArticle (title, date, content)
@@ -152,6 +162,8 @@ paragraph1.textContent = firstParagraph;
 paragraph2.textContent = secondParagraph;
 paragraph3.textContent = thirdParagraph;
 
+/* STEP 2 */
+
 /* Adding event listener to button */
 
 button.addEventListener('click', event => 
@@ -161,6 +173,8 @@ article.classList.toggle('toggle-on')
 
 
 })
+
+/* STEP 3 */
 
 return article;
 }
