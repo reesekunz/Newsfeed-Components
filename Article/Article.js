@@ -165,18 +165,18 @@ return article;
 
 
 
-function createArticle2 (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+// function createArticle2 (title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
 
-  const article = document.createElement('div')
-  article.innerHTML = `<div class="article">
-  <h2>${title}</h2>
-  <p class="date">${date}</p>
+  //const article = document.createElement('div')
+  //article.innerHTML = `<div class="article">
+  //<h2>${title}</h2>
+  //<p class="date">${date}</p>
   
-  {${firstParagraph} + ${secondParagraph} + ${thirdParagraph}}
+  //{${firstParagraph} + ${secondParagraph} + ${thirdParagraph}}
   
-  <span class='expandButton'></span>
-  </div>`
+  //<span class='expandButton'></span>
+  //</div>`
   
-  return article;
-  }
+  //return article;
+  //}
