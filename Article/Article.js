@@ -114,86 +114,69 @@ const data = [
 
 */
 
-/* STEP 4 */
-
-const articles = document.querySelector('.articles');
+const articles = document.querySelector('.articles')
 
 
-data.forEach(dataset => {
-  articles.appendChild(createArticle(dataset.title, dataset.date, dataset.content))
+data.forEach(event => {
+  console.log('creating panel:', event.title)
+  articles.appendChild(createPanel(event.title, event.date, event.firstParagraph, event.secondParagraph, event.thirdParagraph))
 })
 
-/* STEP 1 */
-
-/* Create function */
-function createArticle (title, date, content)
-{
-/* Create new elements to match up with HTML template given above */
-
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+//define new elements
 const article = document.createElement('div');
 const articleTitle = document.createElement('h2');
 const articleDate = document.createElement('p');
 const paragraph1 = document.createElement('p');
 const paragraph2 = document.createElement('p');
 const paragraph3 = document.createElement('p');
-const button = document.createElement('span');
-
-/* Set up structure of elements based off HTML template parent/child element positioning */
-
+const buttonExpand = document.createElement('span');
+// setup structure of elements 
 article.appendChild(articleTitle);
 article.appendChild(articleDate);
 article.appendChild(paragraph1);
 article.appendChild(paragraph2);
 article.appendChild(paragraph3);
 article.appendChild(button);
+// set class names 
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  buttonExpand.classList.add('expandButton');
+// set text content 
+  buttonExpand.textContent = "expand";
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  articleDate.textContent = date;
+  articleTitle.textContent = title;
 
-/* Set class names in reference to HTML template  */
+  // button event listener 
 
-article.classList.add('article');
-articleDate.classList.add('date');
-button.classList.add('expandButton');
-
-
-/* Set text content */
-
-articleTitle.textContent = title;
-articleDate.textContent = date;
-paragraph1.textContent = firstParagraph;
-paragraph2.textContent = secondParagraph;
-paragraph3.textContent = thirdParagraph;
-
-/* STEP 2 */
-
-/* Adding event listener to button */
-
-button.addEventListener('click', event => 
+  buttonExpand.addEventListener('click', event => 
 {
-button.classList.toggle('article-open')
-article.classList.toggle('toggle-on')
+
+article.classList.toggle('article-open');
 
 
 })
-
-/* STEP 3 */
-
 return article;
 }
 
 
-/* STEP 5 */
-
-function createArticle2(title, date, content) {
-const article = document.createElement('div')
-article.innerHTML = `<div class="article">
-<h2>{title of the article}</h2>
-<p class="date">{date of the article}</p>
-
-{three separate paragraph elements}
-
-<span class='expandButton'></span>
-</div>`
-
-return article;
 
 
-}
+function createArticle2 (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+
+  const article = document.createElement('div')
+  article.innerHTML = `<div class="article">
+  <h2>${title}</h2>
+  <p class="date">${date}</p>
+  
+  {${firstParagraph} + ${secondParagraph} + ${thirdParagraph}}
+  
+  <span class='expandButton'></span>
+  </div>`
+  
+  return article;
+  }
