@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
-
+/
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
@@ -179,3 +179,21 @@ article.classList.toggle('toggle-on')
 return article;
 }
 
+
+/* STEP 5 */
+
+function createArticle2(title, date, content) {
+const article = document.createElement('div')
+article.innerHTML = `<div class="article">
+<h2>{title of the article}</h2>
+<p class="date">{date of the article}</p>
+
+{three separate paragraph elements}
+
+<span class='expandButton'></span>
+</div>`
+
+return article;
+
+
+}
